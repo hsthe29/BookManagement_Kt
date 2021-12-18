@@ -232,17 +232,17 @@ fun TableInput(): Triple<Int, String, Double> {
         var textPrice by remember { mutableStateOf("") }
 
         Text("Enter book ID:")
-        TextField(value = textID,
+        OutlinedTextField(value = textID,
             onValueChange = {textID = it},
             singleLine = true
         )
         Text("Enter book name:")
-        TextField(value = textName,
+        OutlinedTextField(value = textName,
             onValueChange = {textName = it},
             singleLine = true
         )
         Text("Enter book price:")
-        TextField(value = textPrice,
+        OutlinedTextField(value = textPrice,
             onValueChange = {textPrice = it},
             singleLine = true
         )
@@ -258,13 +258,12 @@ fun KeyWInput():String {
     var keyword by remember { mutableStateOf("") }
     Column(){
         Text(text = "Enter Keyword", Modifier.align(Alignment.CenterHorizontally))
-        TextField(singleLine = true,
+        OutlinedTextField(singleLine = true,
             value = keyword,
             onValueChange = { keyword = it }
         )
     }
-    keyword = keyword.trim()
-    return keyword
+    return keyword.trim()
 }
 
 @Composable
